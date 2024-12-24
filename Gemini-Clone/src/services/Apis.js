@@ -26,6 +26,10 @@ export const saveAnswer = async(data) => {
   return await commonrequest("POST", `${BACKEND_URL}/saveAnswer`, data)
 }
 
+export const showSavedAns = async(data) => {
+  return await commonrequest("POST", `${BACKEND_URL}/getAnswers`, data)
+}
+
 
 export const userVerify = (data) => {
     return fetch(`${BACKEND_URL}/signin`, {

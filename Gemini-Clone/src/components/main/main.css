@@ -248,3 +248,60 @@ body {
     color: black; /* Black text */
     border: 2px solid #4CAF50; /* Green border */
 }
+
+/* Container for question and answer pairs */
+.qa-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Style for user input (question) */
+.qa-item.user-input {
+    align-self: flex-end;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    text-align: right;
+    margin-top: 10px;
+    color: #000;
+}
+
+/* Style for system output (answer) */
+.qa-item.system-output {
+    align-self: flex-start;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Gemini icon size adjustment */
+.qa-item.system-output img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Modify the input box to be responsive and neat */
+.search-box input {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Search box icons styling */
+.search-box div img {
+    width: 30px;
+    cursor: pointer;
+}

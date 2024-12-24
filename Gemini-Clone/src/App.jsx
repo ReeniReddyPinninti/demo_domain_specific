@@ -9,6 +9,7 @@ import { AuthContextProvider } from './reducer/useReducer';
 import { useAuthContext } from './reducer/useAuthContext';
 import { Navigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import ShowAnswers from './components/sidebar/showAnswers';
 
 const Routing = () => {
   const { user } = useAuthContext();
@@ -26,6 +27,7 @@ const Routing = () => {
         {/* <Route path="/otp" element={<Otp/>} /> */}
         <Route path="otp" element={!user ? <Otp />: <Navigate to="/" />}/>
         {/* <Route path="/extract-text" element={<Main />} /> */}
+        <Route path = "showAns" element={<ShowAnswers/>}/>
       </Routes>
     </Router>
   );

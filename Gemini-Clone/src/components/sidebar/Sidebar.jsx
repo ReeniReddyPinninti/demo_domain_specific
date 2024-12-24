@@ -4,6 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import { Context } from "../../context/Context";
 import { useAuthContext } from "../../reducer/useAuthContext";
 import { getData } from "../../services/Apis";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
     const [extended, setExtended] = useState(false);
@@ -11,6 +12,7 @@ const Sidebar = () => {
     const [userData, setUserData] = useState([]);
     const [error, setError] = useState('');
     const { user } = useAuthContext();
+    const navigate = useNavigate();
 
     const loadPreviousPrompt = async (prompt) => {
         setRecentPrompt(prompt);
@@ -58,7 +60,7 @@ const Sidebar = () => {
                 <div className="sidebar-container">
                     <div className="new-chat">
                         <img src={assets.plus_icon} alt="" onClick={() => newChat()} />
-                        {extended ? <p>New Chat</p> : null}
+                        {extended ? <p onClick={() => navigate('/showAns')}>Show saved answers</p> : null}
                     </div>
                 </div>
                 {extended && (
